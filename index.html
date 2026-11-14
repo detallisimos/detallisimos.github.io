@@ -22,7 +22,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
 a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left,0px))}
 .brand{font-family:var(--script);font-size:2.1rem;line-height:1;color:var(--ink)}
-.brand span{color:var(--gold)}
+a.brand{text-decoration:none;cursor:pointer}a.brand:hover{color:var(--rose)}
 header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;align-items:center;gap:16px;height:64px}
 header.top nav{margin-left:auto;display:flex;gap:18px;font-size:.92rem;font-weight:500}
@@ -189,8 +189,8 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="brand">Detallísimos<span>.</span></div>
-  <nav><a href="#catalogo">Catálogo</a><a href="#a-medida">Diseño a tu medida</a><a href="#personaliza">Qué se personaliza</a><a href="#como">Cómo funciona</a></nav>
+  <a class="brand" href="#" aria-label="Detallísimos, ir al inicio">Detallísimos</a>
+  <nav><a href="#catalogo">Catálogo</a><a href="#a-medida">Diseño a tu medida</a><a href="#personaliza">Qué personalizamos</a><a href="#como">Cómo funciona</a></nav>
   <a class="btn solid hdr" href="#" data-wa>Contáctanos</a>
 </div></header>
 
@@ -199,7 +199,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
     <div class="eyebrow">Invitaciones digitales</div>
     <h1 class="big">Invitaciones que se <em>abren</em> como un regalo</h1>
     <p class="lead">Diseños animados con música, fotos, cuenta regresiva, ubicación y confirmación por WhatsApp. Las recibes como un link listo para compartir por WhatsApp y redes.</p>
-    <div class="cta-row"><a class="btn solid" href="#catalogo">Ver el catálogo</a><a class="btn" href="#personaliza">Qué puedo personalizar</a></div>
+    <div class="cta-row"><a class="btn solid" href="#catalogo">Ver el catálogo</a><a class="btn" href="#personaliza">Qué podemos personalizar</a></div>
     <div class="stats"><div><b id="nTipos">7</b><small>tipos de evento</small></div><div><b id="nModelos">22</b><small>diseños</small></div><div><b>∞</b><small>colores: el que tú quieras</small></div></div>
   </div>
   <div class="phones" id="heroPhones" aria-hidden="true"></div>
@@ -240,21 +240,21 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
 </div></div></section>
 
 <section class="blk alt" id="personaliza"><div class="wrap">
-  <div class="eyebrow">Hecha a tu medida</div>
-  <h2 class="ttl">Qué se puede personalizar</h2>
-  <p class="sub">Todos los diseños incluyen esto. Las secciones que no necesites se pueden quitar.</p>
+  <div class="eyebrow">Nosotros nos encargamos</div>
+  <h2 class="ttl">Qué podemos personalizar</h2>
+  <p class="sub">El equipo de Detallísimos se encarga de todo: adaptamos cada detalle a tu evento y, si alguna sección no la necesitas, la quitamos.</p>
   <div class="feats">
-    <div class="feat"><div class="ic">🎨</div><h3>Colores</h3><p><b>Cualquier color que quieras.</b> Envíanos el nombre del color o su código (por ejemplo <b>#7B2D8E</b>) o una foto del vestido o la decoración, y la hacemos en ese tono, con detalles dorados, plateados u oro rosa. Estos son solo algunos ejemplos:</p><div class="swatches" id="sw"></div></div>
-    <div class="feat"><div class="ic">✍️</div><h3>Tipo de letra</h3><p>6 estilos de letra: elegante, romántica, caligrafía, moderna, clásica e infantil.</p><div class="fonts"><span style="font-family:'Pinyon Script',cursive">Elegante</span><span style="font-family:'Great Vibes',cursive">Romántica</span><span style="font-family:'Parisienne',cursive">Caligrafía</span><span style="font-family:'Sacramento',cursive">Moderna</span><span style="font-family:'Imperial Script',cursive">Clásica</span><span style="font-family:'Dancing Script',cursive">Infantil</span></div></div>
-    <div class="feat"><div class="ic">📸</div><h3>Fotos</h3><p>Foto principal en marco o completa, 3 fotos de recuerdo y galería extra deslizable.</p></div>
-    <div class="feat"><div class="ic">🎵</div><h3>Música</h3><p>Tu canción suena al abrir la invitación, con botón para pausar.</p></div>
-    <div class="feat"><div class="ic">✨</div><h3>Animación de fondo</h3><p>Mariposas, pétalos, destellos, luciérnagas, corazones o ninguna.</p></div>
-    <div class="feat"><div class="ic">📍</div><h3>Lugares</h3><p>Ceremonia y recepción con botones directos a Waze y Google Maps.</p></div>
-    <div class="feat"><div class="ic">⏳</div><h3>Cuenta regresiva</h3><p>Días, horas, minutos y segundos que faltan para el gran día.</p></div>
-    <div class="feat"><div class="ic">🗓️</div><h3>Programa</h3><p>Itinerario con las horas de cada momento de la celebración.</p></div>
-    <div class="feat"><div class="ic">💌</div><h3>Mensaje y textos</h3><p>Mensaje especial, código de vestimenta, regalos o lluvia de sobres y secciones libres (hashtag, hospedaje…).</p></div>
-    <div class="feat"><div class="ic">✅</div><h3>Confirmación por WhatsApp</h3><p>Tus invitados confirman con un toque, con el mensaje ya escrito.</p></div>
-    <div class="feat"><div class="ic">🔗</div><h3>Link para compartir</h3><p>Un link propio para tu evento, listo para WhatsApp, Facebook e Instagram.</p></div>
+    <div class="feat"><div class="ic">🎨</div><h3>Colores</h3><p><b>Lo hacemos en el color que quieras.</b> Envíanos el nombre del color o su código (por ejemplo <b>#7B2D8E</b>) o una foto del vestido o la decoración, y la hacemos en ese tono, con detalles dorados, plateados u oro rosa. Estos son solo algunos ejemplos:</p><div class="swatches" id="sw"></div></div>
+    <div class="feat"><div class="ic">✍️</div><h3>Tipo de letra</h3><p>Escogemos contigo entre 6 estilos de letra: elegante, romántica, caligrafía, moderna, clásica e infantil.</p><div class="fonts"><span style="font-family:'Pinyon Script',cursive">Elegante</span><span style="font-family:'Great Vibes',cursive">Romántica</span><span style="font-family:'Parisienne',cursive">Caligrafía</span><span style="font-family:'Sacramento',cursive">Moderna</span><span style="font-family:'Imperial Script',cursive">Clásica</span><span style="font-family:'Dancing Script',cursive">Infantil</span></div></div>
+    <div class="feat"><div class="ic">📸</div><h3>Fotos</h3><p>Colocamos tu foto principal en marco o completa, 3 fotos de recuerdo y una galería extra deslizable.</p></div>
+    <div class="feat"><div class="ic">🎵</div><h3>Música</h3><p>Ponemos tu canción para que suene al abrir la invitación, con botón para pausar.</p></div>
+    <div class="feat"><div class="ic">✨</div><h3>Animación de fondo</h3><p>Le agregamos mariposas, pétalos, destellos, luciérnagas o corazones, o la dejamos sin animación.</p></div>
+    <div class="feat"><div class="ic">📍</div><h3>Lugares</h3><p>Agregamos la ceremonia y la recepción con botones directos a Waze y Google Maps.</p></div>
+    <div class="feat"><div class="ic">⏳</div><h3>Cuenta regresiva</h3><p>Configuramos la cuenta de días, horas, minutos y segundos que faltan para el gran día.</p></div>
+    <div class="feat"><div class="ic">🗓️</div><h3>Programa</h3><p>Armamos el itinerario con las horas de cada momento de la celebración.</p></div>
+    <div class="feat"><div class="ic">💌</div><h3>Mensaje y textos</h3><p>Escribimos tu mensaje especial, código de vestimenta, regalos o lluvia de sobres y secciones libres (hashtag, hospedaje…).</p></div>
+    <div class="feat"><div class="ic">✅</div><h3>Confirmación por WhatsApp</h3><p>Dejamos lista la confirmación: tus invitados responden con un toque y el mensaje ya escrito.</p></div>
+    <div class="feat"><div class="ic">🔗</div><h3>Link para compartir</h3><p>Te entregamos un link propio para tu evento, listo para WhatsApp, Facebook e Instagram.</p></div>
   </div>
   <h2 class="ttl" style="margin-top:56px;font-size:clamp(1.7rem,4vw,2.2rem)">Detalles especiales de cada evento</h2>
   <div class="extras" id="extras"></div>
@@ -275,7 +275,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
   </div>
 </div></section>
 
-<footer><div class="brand" style="font-size:1.8rem">Detallísimos<span>.</span></div><div style="margin-top:6px">detallisimos.com · Invitaciones digitales</div>
+<footer><div class="brand" style="font-size:1.8rem">Detallísimos</div><div style="margin-top:6px">detallisimos.com · Invitaciones digitales</div>
   <div class="social"><a href="#" data-mail>✉️ <span data-correo>tusdetallisimos@gmail.com</span></a><a href="#" data-wa data-solo-wa>WhatsApp</a><a id="fbLink" href="#" target="_blank" rel="noopener" hidden>Facebook</a><a id="igLink" href="#" target="_blank" rel="noopener" hidden>Instagram</a></div>
   <div style="margin-top:10px;font-size:.8rem">© <span id="anio"></span> Detallísimos</div></footer>
 <a class="wa-float" href="#" data-wa data-solo-wa aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.4z"/></svg></a>
