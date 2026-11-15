@@ -54,6 +54,13 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-of
 .btn.wa{background:#25d366;color:#fff;box-shadow:0 8px 20px rgba(37,211,102,.3)}
 .btn.sec{background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 18px;font-weight:600;font-size:.9rem}
 .saved{font-size:.78rem;color:var(--muted);text-align:center;margin:0}
+label.song{flex-direction:row;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-top:8px;font-weight:500;font-size:.92rem;cursor:pointer}
+label.song input{width:18px;height:18px;accent-color:var(--rose);flex:none}
+label.song span{flex:1}label.song small{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
+label.song:has(input:checked){border-color:var(--rose);background:color-mix(in srgb,var(--rose) 7%,#fff)}
+.play{width:38px;height:38px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:.9rem;cursor:pointer;flex:none}
+.songs .lbl{font-size:.84rem;font-weight:600}.shint{margin:4px 0 0;color:var(--muted);font-size:.84rem}
+#canLink{margin-top:8px}
 footer{text-align:center;color:var(--muted);font-size:.85rem;padding:10px 0 40px}
 footer a{color:var(--ink)}
 </style>
@@ -94,6 +101,9 @@ const $=id=>document.getElementById(id);
 const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const TIPOS={xv:'XV años',boda:'Boda',grad:'Graduación',bautizo:'Bautizo',comunion:'Primera Comunión',baby:'Baby Shower',cumple:'Cumpleaños'};
 const MODELOS={"xv-clasico":["Clásico con sobre","xv"],"xv-princesa":["Princesa con telón","xv"],"xv-moderno":["Moderno minimalista","xv"],"xv-floral":["Jardín floral","xv"],"boda-clasica":["Clásica elegante","boda"],"boda-jardin":["Jardín romántico","boda"],"boda-rustica":["Rústica","boda"],"grad-gala":["Elegante de gala","grad"],"grad-diploma":["Diploma clásico","grad"],"grad-minimal":["Anuario","grad"],"sac-celestial":["Celestial","bautizo"],"sac-vitral":["Vitral de iglesia","bautizo"],"sac-tierno":["Tierno acuarela","bautizo"],"com-custodia":["Custodia dorada","comunion"],"com-misal":["Mi misal","comunion"],"bs-ositos":["Ositos y nubes","baby"],"bs-safari":["Safari bebé","baby"],"bs-ciguena":["Cigüeña y luna","baby"],"bs-acuarela":["Acuarela botánica","baby"],"cu-globos":["Fiesta de globos","cumple"],"cu-neon":["Neón","cumple"],"cu-circo":["Circo","cumple"]};
+/* Canciones libres de derechos (archivos en /musica/<evento>/) */
+const CANCIONES={xv:[['vals-sonador','Vals soñador','1:50'],['vals-jazz','Vals jazz','2:43'],['vals-brillante-chopin','Vals brillante (Chopin)','3:30'],['el-acordeonista','El acordeonista','1:23'],['nuevo-comienzo','Nuevo comienzo','3:21']]};
+const MUS=location.protocol==='file:'?'https://detallisimos.com/musica/':'/musica/';
 const NOBODA=['xv','grad','bautizo','comunion','baby','cumple'];
 const X=' <span class="extra">extra Q10</span>';
 /* Secciones: [título, pista, campos]. Campo: [clave, etiqueta, tipo, tipos donde aparece, placeholder] */
@@ -134,7 +144,7 @@ const S=[
   ['mapa2','Ubicación del segundo lugar','text'],
  ]],
  ['Detalles','Si prefieres, déjalo en blanco y nosotros redactamos un mensaje bonito.',[
-  ['cancion','Canción que sonará al abrir','text',null,'Nombre y artista, o link de YouTube'],
+  ['cancion','Canción que sonará al abrir','cancion'],
   ['mensaje','Mensaje especial <small>(opcional)</small>','area'],
   ['vestimenta','Código de vestimenta','text',null,'Ej. Formal, colores claros. Reservado el color rosa.'],
   ['regalos','Regalos o lluvia de sobres','area',null,'El texto que quieres que aparezca'],
@@ -158,6 +168,7 @@ const TXT={tipo:'Evento',modelo:'Diseño',nombre:'Nombre',fecha:'Fecha',lugar1:'
 function field([k,l,t,only,ph]){
   const lab=l, id='c_'+k, phA=ph?` placeholder="${esc(ph)}"`:'';
   let inp;
+  if(t==='cancion') return `<div class="full songs" data-k="${k}"><div class="lbl">${lab}</div><div id="songList"></div><input type="hidden" name="${k}" id="${id}"></div>`;
   if(t==='tipo') inp=`<select id="${id}" name="${k}">`+Object.entries(TIPOS).map(([v,n])=>`<option value="${v}">${n}</option>`).join('')+`</select>`;
   else if(t==='modelo') inp=`<select id="${id}" name="${k}"></select>`;
   else if(t.startsWith('select:')) inp=`<select id="${id}" name="${k}"><option value="">— Escoge —</option>`+t.slice(7).split('|').map(o=>`<option>${esc(o)}</option>`).join('')+`</select>`;
@@ -175,14 +186,32 @@ let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 function modelos(){const t=$('c_tipo').value, cur=$('c_modelo').value;
   $('c_modelo').innerHTML='<option value="">Aún no sé / el que platicamos</option>'+Object.entries(MODELOS).filter(([,m])=>m[1]===t).map(([id,m])=>`<option value="${id}">${esc(m[0])}</option>`).join('')+'<option value="medida">Diseño a mi medida</option>';
   if([...$('c_modelo').options].some(o=>o.value===cur)) $('c_modelo').value=cur;}
-function visibles(){const t=$('c_tipo').value;
+function visibles(){const t=$('c_tipo').value; if(audio){audio.pause();playing='';} canciones();
   document.querySelectorAll('[data-only]').forEach(l=>{l.hidden=!l.dataset.only.split(',').includes(t);});
   fotos();}
+let audio=null, playing='';
+function canciones(){const t=$('c_tipo').value, L=CANCIONES[t]||[], prev=(document.querySelector('[name=canOp]:checked')||{}).value||saved.canOp||'', link=($('canLink')||{}).value||saved.canLink||'';
+  $('songList').innerHTML=(L.length?`<p class="shint">Escucha y escoge una de nuestra lista (incluida en tu paquete):</p>`+L.map(([id,n,d])=>`<label class="song"><input type="radio" name="canOp" value="lista:${id}"><span>${esc(n)} <small>${d} · Incluida</small></span><button type="button" class="play" data-play="${id}" aria-label="Escuchar ${esc(n)}">▶</button></label>`).join(''):`<p class="shint">Pronto tendremos canciones de nuestra lista para este evento.</p>`)+
+   `<label class="song"><input type="radio" name="canOp" value="youtube"><span>🔗 Otra canción: te mando el link de YouTube <small>+Q10</small></span></label><input id="canLink" name="canLink" type="text" placeholder="Pega aquí el link de YouTube" hidden>`+
+   `<label class="song"><input type="radio" name="canOp" value="mp3"><span>📁 Te mando mi canción en MP3 por WhatsApp <small>+Q5</small></span></label>`;
+  const r=[...document.querySelectorAll('[name=canOp]')].find(x=>x.value===prev); if(r) r.checked=true; $('canLink').value=link; cancionVal();}
+function cancionVal(){const op=(document.querySelector('[name=canOp]:checked')||{}).value||'', t=$('c_tipo').value;
+  $('canLink').hidden=op!=='youtube';
+  let v=''; if(op.startsWith('lista:')){const s=(CANCIONES[t]||[]).find(x=>x[0]===op.slice(6)); if(s) v=s[1]+' (de la lista)';}
+  else if(op==='youtube') v='YouTube (+Q10): '+($('canLink').value.trim()||'te mando el link');
+  else if(op==='mp3') v='Te mando mi MP3 (+Q5)';
+  $('c_cancion').value=v;}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-play]'); if(!b)return; e.preventDefault();
+  const id=b.dataset.play, t=$('c_tipo').value;
+  document.querySelectorAll('[data-play]').forEach(x=>x.textContent='▶');
+  if(audio&&playing===id){audio.pause();playing='';return;}
+  if(audio)audio.pause(); audio=new Audio(MUS+t+'/'+id+'.mp3'); audio.play().catch(()=>{}); playing=id; b.textContent='⏸';
+  audio.onended=()=>{b.textContent='▶';playing='';};});
 function fotos(){const t=$('c_tipo').value;
   const L=['<b>1 foto principal</b> (la de portada)'+(t==='xv'?', de preferencia con el vestido':t==='boda'?', de los dos':''),'<b>3 fotos de recuerdo</b>'];
   if(t==='baby') L.push('<b>Foto del ultrasonido</b>');
   L.push('Fotos extra para la galería, si las agregaste (3 por cada Q10)');
-  L.push('Tu <b>canción</b>, si no la pusiste arriba (link de YouTube o el audio)');
+  L.push('Tu <b>canción en MP3</b>, si escogiste mandarla tú');
   $('fotos').innerHTML=`<h2>📸 Después, tus fotos</h2><ul>${L.map(x=>`<li>${x}</li>`).join('')}</ul><p>Mándalas en el mismo chat de WhatsApp después de enviar este formulario.</p><p class="tip">💡 <b>Para que no pierdan calidad</b>, envíalas como <b>Documento</b>: toca 📎 (o +) → <b>Documento</b> → escoge tus fotos.</p>`;}
 // Rellenar desde guardado y desde el link
 const fromLink={};
@@ -196,7 +225,7 @@ modelos();
 Object.entries(init).forEach(([k,v])=>{const e=$('c_'+k);if(e&&k!=='tipo')e.value=v;});
 visibles();
 
-function datos(){const o={};new FormData($('f')).forEach((v,k)=>{o[k]=String(v).trim();});return o;}
+function datos(){cancionVal();const o={};new FormData($('f')).forEach((v,k)=>{o[k]=String(v).trim();});return o;}
 function fmtFecha(v){return v?v.split('-').reverse().join('/'):v;}
 function texto(){
   const o=datos(), t=o.tipo, vis=k=>{const l=document.querySelector(`[data-k="${k}"]`);return l&&!l.hidden;};
