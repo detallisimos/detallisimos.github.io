@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datos para tu invitación · Detallísimos</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Llena los datos de tu invitación digital y envíanoslos por WhatsApp.">
+<meta property="og:title" content="Datos para tu invitación · Detallísimos">
+<meta property="og:description" content="Llena los datos de tu invitación y envíanoslos por WhatsApp con un toque.">
+<meta property="og:image" content="https://detallisimos.com/og.jpg">
+<meta name="theme-color" content="#fbf7f3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}html,body{margin:0}[hidden]{display:none!important}
+:root{--bg:#fbf7f3;--bg2:#f4ece4;--card:#fff;--ink:#2b2226;--muted:#76686d;--gold:#b88a3e;--gold2:#e3c58a;--rose:#c9708a;--line:#eadfd6;
+  --script:"Great Vibes",cursive;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",system-ui,-apple-system,sans-serif}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+header{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 90%,transparent);position:sticky;top:0;z-index:5;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--script);font-size:2rem;line-height:1;color:var(--ink);text-decoration:none}
+header small{color:var(--muted);font-size:.85rem}
+.hero{padding:34px 0 10px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-200px;background:radial-gradient(circle,color-mix(in srgb,var(--rose) 22%,transparent),transparent 65%)}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,7vw,2.8rem);line-height:1.05;margin:8px 0 10px}
+h1 em{font-family:var(--script);font-style:normal;font-weight:400;color:var(--rose);font-size:1.15em}
+.lead{color:var(--muted);margin:0}
+.steps{display:flex;flex-direction:column;gap:6px;margin:16px 0 0;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:16px;font-size:.92rem}
+.steps b{color:var(--rose)}
+form{display:flex;flex-direction:column;gap:16px;margin:20px 0 30px}
+fieldset{margin:0;border:1px solid var(--line);border-radius:20px;background:var(--card);padding:18px 18px 20px;min-width:0}
+legend{font-family:var(--serif);font-size:1.45rem;font-weight:600;padding:0 6px}
+.hint{margin:-4px 0 12px;color:var(--muted);font-size:.86rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+label{display:flex;flex-direction:column;gap:5px;font-size:.84rem;font-weight:600}
+label.full{grid-column:1/-1}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;font-weight:400;font-size:16px;border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:92px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.extra{display:inline-block;font-size:.72rem;font-weight:700;color:var(--rose);background:var(--bg2);border-radius:20px;padding:1px 8px;margin-left:4px;vertical-align:1px}
+.photos{background:var(--ink);color:#fff;border-radius:20px;padding:20px}
+.photos h2{font-family:var(--serif);font-size:1.6rem;margin:0 0 8px}
+.photos ul{margin:0 0 12px;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:.93rem}
+.photos p{margin:0;font-size:.88rem;opacity:.85}
+.photos .tip{margin-top:10px;background:rgba(255,255,255,.1);border-radius:12px;padding:10px 12px;opacity:1}
+.send{position:sticky;bottom:0;background:linear-gradient(transparent,var(--bg) 30%);padding:18px 0 calc(14px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:40px;padding:15px 24px;font:inherit;font-weight:700;font-size:1rem;text-decoration:none;border:0;cursor:pointer}
+.btn.wa{background:#25d366;color:#fff;box-shadow:0 8px 20px rgba(37,211,102,.3)}
+.btn.sec{background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 18px;font-weight:600;font-size:.9rem}
+.saved{font-size:.78rem;color:var(--muted);text-align:center;margin:0}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:10px 0 40px}
+footer a{color:var(--ink)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="/">Detallísimos</a><small>Datos de tu invitación</small></div></header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Ya casi está lista</div>
+    <h1>Cuéntanos los datos de tu <em>invitación</em></h1>
+    <p class="lead">Llena lo que aplique a tu evento. Si algo no lo sabes todavía, déjalo en blanco y lo vemos por WhatsApp.</p>
+    <div class="steps">
+      <div><b>1.</b> Llena el formulario (se guarda solo en tu teléfono mientras lo llenas).</div>
+      <div><b>2.</b> Toca <b>Enviar por WhatsApp</b>: nos llega todo ordenado.</div>
+      <div><b>3.</b> En ese mismo chat mándanos tus fotos y tu canción.</div>
+    </div>
+  </section>
+
+  <form id="f" onsubmit="return false" autocomplete="on"></form>
+
+  <div class="photos" id="fotos"></div>
+
+  <div class="send">
+    <a class="btn wa" id="enviar" href="#" target="_blank" rel="noopener">💬 Enviar por WhatsApp</a>
+    <button type="button" class="btn sec" id="copiar">📋 Copiar los datos</button>
+    <p class="saved" id="saved"></p>
+  </div>
+</div>
+<footer>¿Dudas? Escríbenos al <a id="waTxt" href="#">WhatsApp</a> o a <a href="mailto:tusdetallisimos@gmail.com">tusdetallisimos@gmail.com</a></footer>
+
+<script>
+/* ===== Configuración ===== */
+const WHATSAPP='50238467042';
+/* ========================= */
+(function(){
+const $=id=>document.getElementById(id);
+const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TIPOS={xv:'XV años',boda:'Boda',grad:'Graduación',bautizo:'Bautizo',comunion:'Primera Comunión',baby:'Baby Shower',cumple:'Cumpleaños'};
+const MODELOS={"xv-clasico":["Clásico con sobre","xv"],"xv-princesa":["Princesa con telón","xv"],"xv-moderno":["Moderno minimalista","xv"],"xv-floral":["Jardín floral","xv"],"boda-clasica":["Clásica elegante","boda"],"boda-jardin":["Jardín romántico","boda"],"boda-rustica":["Rústica","boda"],"grad-gala":["Elegante de gala","grad"],"grad-diploma":["Diploma clásico","grad"],"grad-minimal":["Anuario","grad"],"sac-celestial":["Celestial","bautizo"],"sac-vitral":["Vitral de iglesia","bautizo"],"sac-tierno":["Tierno acuarela","bautizo"],"com-custodia":["Custodia dorada","comunion"],"com-misal":["Mi misal","comunion"],"bs-ositos":["Ositos y nubes","baby"],"bs-safari":["Safari bebé","baby"],"bs-ciguena":["Cigüeña y luna","baby"],"bs-acuarela":["Acuarela botánica","baby"],"cu-globos":["Fiesta de globos","cumple"],"cu-neon":["Neón","cumple"],"cu-circo":["Circo","cumple"]};
+const NOBODA=['xv','grad','bautizo','comunion','baby','cumple'];
+const X=' <span class="extra">extra Q10</span>';
+/* Secciones: [título, pista, campos]. Campo: [clave, etiqueta, tipo, tipos donde aparece, placeholder] */
+const S=[
+ ['Tu invitación','',[
+  ['tipo','Tipo de evento','tipo'],
+  ['modelo','Diseño que escogiste','modelo'],
+  ['color','Color','text',null,'Ej. rosa palo, #7B2D8E o “te mando foto del vestido”'],
+  ['letra','Tipo de letra','select:Que ustedes escojan|Elegante|Romántica|Caligrafía|Moderna|Clásica|Infantil'],
+ ]],
+ ['¿Quién celebra?','Escribe los nombres como quieres que aparezcan.',[
+  ['nombre','Nombre principal','text',NOBODA,'Ej. Isabella'],
+  ['nombreCompleto','Nombre completo <small>(opcional)</small>','text',['xv','grad','bautizo','comunion'],'Ej. Isabella María Morales Castillo'],
+  ['edad','¿Cuántos años cumple?','text',['cumple'],'Ej. 7'],
+  ['novia','Nombre de la novia','text',['boda']],
+  ['novio','Nombre del novio','text',['boda']],
+  ['papa','Papá','text',NOBODA],
+  ['mama','Mamá','text',NOBODA],
+  ['papasNovia','Papás de la novia','text',['boda'],'Ej. Jorge Herrera y Patricia Molina'],
+  ['papasNovio','Papás del novio','text',['boda'],'Ej. Luis Castillo y Ana Gómez'],
+  ['padrino','Padrino','text',['bautizo','comunion']],
+  ['madrina','Madrina','text',['bautizo','comunion']],
+  ['titulo','Título que obtiene','text',['grad'],'Ej. Licenciada en Administración de Empresas'],
+  ['institucion','Colegio o universidad','text',['grad']],
+  ['promocion','Promoción','text',['grad'],'Ej. Promoción 2026'],
+  ['sexo','¿Niño o niña?','select:Niño|Niña|Todavía no sabemos|Es sorpresa: queremos revelación',['baby']],
+  ['llegada','Fecha estimada de llegada <small>(opcional)</small>','date',['baby']],
+ ]],
+ ['Fecha y lugares','Pega el link de Google Maps o escribe la dirección.',[
+  ['fecha','Fecha del evento','date'],
+  ['hora','Hora','time'],
+  ['lugar1','Lugar principal (nombre)','text',null,'Ej. Parroquia San José / Salón Jardín Real'],
+  ['hora1','Hora en ese lugar','time'],
+  ['mapa1','Ubicación (link de Maps o dirección)','text',null,'https://maps.app.goo.gl/…'],
+  ['lugar2','Segundo lugar <small>(iglesia y fiesta, civil y religiosa)</small>'+X,'text',null,'Déjalo vacío si es un solo lugar'],
+  ['hora2','Hora en el segundo lugar','time'],
+  ['mapa2','Ubicación del segundo lugar','text'],
+ ]],
+ ['Detalles','Si prefieres, déjalo en blanco y nosotros redactamos un mensaje bonito.',[
+  ['cancion','Canción que sonará al abrir','text',null,'Nombre y artista, o link de YouTube'],
+  ['mensaje','Mensaje especial <small>(opcional)</small>','area'],
+  ['vestimenta','Código de vestimenta','text',null,'Ej. Formal, colores claros. Reservado el color rosa.'],
+  ['regalos','Regalos o lluvia de sobres','area',null,'El texto que quieres que aparezca'],
+  ['momentos','Momentos especiales'+X,'area',['xv'],'Ej. vals, cambio de zapatillas, coronación, última muñeca…'],
+  ['historia','Nuestra historia'+X,'area',['boda'],'Fechas y momentos: cómo se conocieron, primera cita, la pedida…'],
+  ['mesa','Mesa de regalos (links)'+X,'area',['boda']],
+  ['programa','Itinerario o programa'+X,'area',null,'Una actividad por línea. Ej. 17:00 Recepción'],
+  ['libre','Sección libre (hashtag, hospedaje, avisos…)'+X,'area'],
+ ]],
+ ['Confirmación de asistencia','¿A qué número quieres que tus invitados confirmen?',[
+  ['confirma','WhatsApp para confirmar','tel',null,'Ej. 5555 1234'],
+  ['confirma2','Otro número <small>(opcional)</small>'+X,'tel'],
+  ['limite','Fecha límite para confirmar <small>(opcional)</small>','date'],
+ ]],
+ ['Tus datos','',[
+  ['cliente','Tu nombre','text',null,'¿Cómo te llamas?'],
+  ['notas','Algo más que debamos saber','area'],
+ ]],
+];
+const TXT={tipo:'Evento',modelo:'Diseño',nombre:'Nombre',fecha:'Fecha',lugar1:'Lugar',hora1:'Hora del lugar',mapa1:'Ubicación',lugar2:'Segundo lugar',hora2:'Hora 2.º lugar',mapa2:'Ubicación 2.º lugar',confirma:'Confirmar al',confirma2:'Otro número para confirmar',limite:'Confirmar antes del',cliente:'Enviado por',notas:'Notas'};
+function field([k,l,t,only,ph]){
+  const lab=l, id='c_'+k, phA=ph?` placeholder="${esc(ph)}"`:'';
+  let inp;
+  if(t==='tipo') inp=`<select id="${id}" name="${k}">`+Object.entries(TIPOS).map(([v,n])=>`<option value="${v}">${n}</option>`).join('')+`</select>`;
+  else if(t==='modelo') inp=`<select id="${id}" name="${k}"></select>`;
+  else if(t.startsWith('select:')) inp=`<select id="${id}" name="${k}"><option value="">— Escoge —</option>`+t.slice(7).split('|').map(o=>`<option>${esc(o)}</option>`).join('')+`</select>`;
+  else if(t==='area') inp=`<textarea id="${id}" name="${k}"${phA}></textarea>`;
+  else inp=`<input id="${id}" name="${k}" type="${t}"${phA}${t==='tel'?' inputmode="tel"':''}>`;
+  const full=(t==='area'||k==='cancion'||k==='lugar1'||k==='lugar2'||k==='mapa1'||k==='mapa2')?' class="full"':'';
+  return `<label${full} data-k="${k}"${only?` data-only="${only.join(',')}"`:''}>${lab}${inp}</label>`;
+}
+$('f').innerHTML=S.map(([t,h,F])=>`<fieldset><legend>${t}</legend>${h?`<p class="hint">${h}</p>`:''}<div class="grid">${F.map(field).join('')}</div></fieldset>`).join('');
+const LAB={};S.forEach(([,,F])=>F.forEach(f=>{LAB[f[0]]=f[1].replace(/<[^>]+>.*?<\/[^>]+>/g,'').replace(/<[^>]+>/g,'').trim();}));
+
+const params=new URLSearchParams(location.search);
+const KEY='detallisimos-datos';
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+function modelos(){const t=$('c_tipo').value, cur=$('c_modelo').value;
+  $('c_modelo').innerHTML='<option value="">Aún no sé / el que platicamos</option>'+Object.entries(MODELOS).filter(([,m])=>m[1]===t).map(([id,m])=>`<option value="${id}">${esc(m[0])}</option>`).join('')+'<option value="medida">Diseño a mi medida</option>';
+  if([...$('c_modelo').options].some(o=>o.value===cur)) $('c_modelo').value=cur;}
+function visibles(){const t=$('c_tipo').value;
+  document.querySelectorAll('[data-only]').forEach(l=>{l.hidden=!l.dataset.only.split(',').includes(t);});
+  fotos();}
+function fotos(){const t=$('c_tipo').value;
+  const L=['<b>1 foto principal</b> (la de portada)'+(t==='xv'?', de preferencia con el vestido':t==='boda'?', de los dos':''),'<b>3 fotos de recuerdo</b>'];
+  if(t==='baby') L.push('<b>Foto del ultrasonido</b>');
+  L.push('Fotos extra para la galería, si las agregaste (3 por cada Q10)');
+  L.push('Tu <b>canción</b>, si no la pusiste arriba (link de YouTube o el audio)');
+  $('fotos').innerHTML=`<h2>📸 Después, tus fotos</h2><ul>${L.map(x=>`<li>${x}</li>`).join('')}</ul><p>Mándalas en el mismo chat de WhatsApp después de enviar este formulario.</p><p class="tip">💡 <b>Para que no pierdan calidad</b>, envíalas como <b>Documento</b>: toca 📎 (o +) → <b>Documento</b> → escoge tus fotos.</p>`;}
+// Rellenar desde guardado y desde el link
+const fromLink={};
+if(params.get('tipo')&&TIPOS[params.get('tipo')]) fromLink.tipo=params.get('tipo');
+if(params.get('modelo')&&MODELOS[params.get('modelo')]){fromLink.modelo=params.get('modelo');fromLink.tipo=fromLink.tipo||MODELOS[params.get('modelo')][1];}
+if(params.get('color')) fromLink.color=params.get('color');
+if(params.get('nombre')) fromLink.cliente=params.get('nombre');
+const init=Object.assign({},saved,fromLink);
+if(init.tipo) $('c_tipo').value=init.tipo;
+modelos();
+Object.entries(init).forEach(([k,v])=>{const e=$('c_'+k);if(e&&k!=='tipo')e.value=v;});
+visibles();
+
+function datos(){const o={};new FormData($('f')).forEach((v,k)=>{o[k]=String(v).trim();});return o;}
+function fmtFecha(v){return v?v.split('-').reverse().join('/'):v;}
+function texto(){
+  const o=datos(), t=o.tipo, vis=k=>{const l=document.querySelector(`[data-k="${k}"]`);return l&&!l.hidden;};
+  const val=k=>{let v=o[k];if(!v||!vis(k))return '';if(k==='tipo')return TIPOS[v];if(k==='modelo')return v==='medida'?'Diseño a mi medida':(MODELOS[v]||[v])[0];
+    if(/^(fecha|llegada|limite)$/.test(k))return fmtFecha(v);return v;};
+  const out=['📋 *DATOS PARA MI INVITACIÓN*'];
+  S.forEach(([tit,,F])=>{const lines=[];F.forEach(([k])=>{const v=val(k);if(!v)return;
+      const lab=TXT[k]||LAB[k];
+      lines.push(v.includes('\n')?`*${lab}:*\n${v}`:`*${lab}:* ${v}`);});
+    if(lines.length) out.push('','*— '+tit.toUpperCase()+' —*',...lines);});
+  out.push('','📸 Ahora te mando mis fotos por aquí.');
+  return out.join('\n');
+}
+function actualizar(){
+  const o=datos();try{localStorage.setItem(KEY,JSON.stringify(o));$('saved').textContent='✓ Guardado en este teléfono';}catch(e){}
+  $('enviar').href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(texto());
+}
+$('c_tipo').addEventListener('change',()=>{modelos();visibles();});
+$('f').addEventListener('input',actualizar);$('f').addEventListener('change',actualizar);
+$('copiar').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(texto());$('copiar').textContent='✓ Copiado. Pégalo en nuestro chat';}catch(e){prompt('Copia este texto:',texto());}});
+$('waTxt').href='https://wa.me/'+WHATSAPP;
+actualizar();
+})();
+</script>
+</body>
+</html>
