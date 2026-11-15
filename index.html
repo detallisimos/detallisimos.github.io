@@ -10,6 +10,12 @@
 <meta property="og:url" content="https://detallisimos.com/">
 <meta property="og:title" content="Detallísimos · Invitaciones digitales">
 <meta property="og:description" content="Invitaciones animadas con música, fotos, cuenta regresiva y confirmación por WhatsApp. Mira el catálogo.">
+<meta property="og:image" content="https://detallisimos.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Detallísimos · Invitaciones digitales">
+<meta property="og:locale" content="es_GT">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#fbf7f3">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -190,6 +196,36 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
 .fine{margin:0;font-size:.82rem;color:var(--muted);padding:0 6px}
 .adds a{color:var(--ink)}.adds li.med b{font-size:.85rem}
 
+/* Pedido */
+.order{display:grid;grid-template-columns:1.35fr .9fr;gap:22px;margin-top:30px;align-items:start}
+@media (max-width:860px){.order{grid-template-columns:1fr}}
+.ofields{display:flex;flex-direction:column;gap:16px}
+.ogrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+@media (max-width:560px){.ogrid{grid-template-columns:1fr}}
+.ogrid label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:600}.ogrid .full{grid-column:1/-1}
+.order select,.order input[type=text],.order input[type=date]{font:inherit;font-weight:400;font-size:.95rem;border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff;color:var(--ink);width:100%}
+.order select:focus,.order input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.order fieldset{margin:0;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 20px 18px}
+.order legend{font-family:var(--serif);font-size:1.4rem;font-weight:600;padding:0 6px;display:flex;align-items:center;gap:8px}
+.order legend span{font-family:var(--sans);font-size:.78rem;font-weight:700;background:var(--bg2);border-radius:20px;padding:3px 10px;color:var(--rose)}
+.ochecks{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+@media (max-width:560px){.ochecks{grid-template-columns:1fr}}
+.ochecks label{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;cursor:pointer;line-height:1.35}
+.ochecks input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--rose);flex:none}
+.ochecks label i{font-style:normal;color:var(--rose);font-weight:700;margin-left:auto;padding-left:8px;white-space:nowrap}
+.oqty{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:.92rem}
+.qty{display:inline-flex;align-items:center;gap:10px}.qty b{min-width:18px;text-align:center}
+.qty button{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.1rem;cursor:pointer;color:var(--ink)}
+.osum{position:sticky;top:84px;background:var(--ink);color:#fff;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.osum h3{margin:0;font-family:var(--serif);font-size:1.7rem}
+.osum ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:.92rem}
+.osum li{display:flex;justify-content:space-between;gap:12px;opacity:.92}.osum li b{color:var(--gold2);white-space:nowrap}
+.otot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(255,255,255,.2);padding-top:12px}
+.otot span{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}.otot b{font-family:var(--serif);font-size:2.6rem;line-height:1}
+.oenviar{background:#fff!important;color:var(--ink)!important;border-color:#fff!important;justify-content:center}
+.osum .fine{color:rgba(255,255,255,.7);padding:0}
+@media (max-width:860px){.osum{position:static}}
+
 /* Diseño a tu medida */
 .medida{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;background:linear-gradient(135deg,#fff,color-mix(in srgb,var(--rose) 10%,#fff));border:1px solid var(--line);border-radius:28px;padding:44px clamp(20px,4vw,48px);position:relative;overflow:hidden}
 .medida::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-120px;top:-140px;background:radial-gradient(circle,color-mix(in srgb,var(--gold2) 40%,transparent),transparent 65%)}
@@ -226,7 +262,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
     <h1 class="big">La invitación es el <em>primer recuerdo</em> de tu fiesta</h1>
     <p class="lead">Diseños animados con música, fotos, cuenta regresiva, ubicación y confirmación por WhatsApp. Las recibes como un link listo para compartir por WhatsApp y redes.</p>
     <div class="cta-row"><a class="btn solid" href="#catalogo">Ver el catálogo</a><a class="btn" href="#precio">Desde Q50</a><a class="btn" href="#personaliza">Qué podemos personalizar</a></div>
-    <div class="stats"><div><b id="nTipos">7</b><small>tipos de evento</small></div><div><b id="nModelos">22</b><small>diseños</small></div><div><b>∞</b><small>colores: el que tú quieras</small></div></div>
+    <div class="stats"><div><b id="nTipos">7</b><small>tipos de evento</small></div><div><b id="nModelos">22</b><small>diseños</small></div><div><b>∞</b><small>colores: el que tú quieras</small></div><div><b>2-3</b><small>días de entrega</small></div></div>
   </div>
   <div class="phones" id="heroPhones" aria-hidden="true"></div>
 </div></section>
@@ -237,7 +273,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
   <div class="steps">
     <div class="step"><i>1</i><h3>Elige tu diseño</h3><p>Escoge el modelo que más te guste del catálogo y el color de tu evento.</p></div>
     <div class="step"><i>2</i><h3>Envíanos tus datos</h3><p>Nombres, fecha, lugares, fotos y la canción. Nosotros armamos tu invitación.</p></div>
-    <div class="step"><i>3</i><h3>Comparte tu link</h3><p>Recibes tu link para enviar por WhatsApp, Facebook e Instagram.</p></div>
+    <div class="step"><i>3</i><h3>Comparte tu link</h3><p>En 2 a 3 días recibes tu link para enviar por WhatsApp, Facebook e Instagram.</p></div>
   </div>
 </div></section>
 
@@ -311,6 +347,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
         <li>Lo propio de tu evento: tiara (XV), pastel con velas (cumpleaños), ultrasonido y ¿niño o niña? (baby shower), padrinos (bautizo y comunión), título (graduación)</li>
         <li>Link para compartir, activo hasta 3 meses después del evento</li>
         <li>1 ronda de correcciones</li>
+        <li>Entrega en 2 a 3 días</li>
       </ul>
     </div>
     <div class="pside">
@@ -342,8 +379,37 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
         <p class="sum">Q50 + Q10 + Q10 + Q20 = <b>Q90</b></p>
       </div>
       <p class="fine">Una corrección = todos los cambios que envíes juntos en un solo mensaje.</p>
+      <a class="btn solid" href="#pedido" style="align-self:flex-start">🧮 Arma tu pedido y calcula el total</a>
     </div>
   </div>
+</div></section>
+
+<section class="blk alt" id="pedido"><div class="wrap">
+  <div class="eyebrow">Arma tu pedido</div>
+  <h2 class="ttl">Calcula tu invitación y pídela</h2>
+  <p class="sub">Escoge tu diseño y lo que quieras agregar. Te mostramos el total y nos lo envías con un toque; nosotros te confirmamos y empezamos.</p>
+  <form class="order" id="orderForm" onsubmit="return false">
+    <div class="ofields">
+      <div class="ogrid">
+        <label>Tipo de evento<select id="oTipo"></select></label>
+        <label>Diseño<select id="oModelo"></select></label>
+        <label>Color<input id="oColor" type="text" placeholder="Ej. rosa palo, #7B2D8E o “te mando foto”"></label>
+        <label>Fecha del evento<input id="oFecha" type="date"></label>
+        <label class="full">Tu nombre<input id="oNombre" type="text" placeholder="¿Cómo te llamas?" autocomplete="name"></label>
+      </div>
+      <fieldset><legend>Extras <span>Q10 c/u</span></legend><div class="ochecks" id="oExtras"></div>
+        <label class="oqty">Fotos extra para la galería (grupos de 3) <span class="qty"><button type="button" data-q="-1" aria-label="Menos">−</button><b id="oFotos">0</b><button type="button" data-q="1" aria-label="Más">+</button></span></label>
+      </fieldset>
+      <fieldset><legend>Adicionales</legend><div class="ochecks" id="oAdds"></div></fieldset>
+    </div>
+    <aside class="osum" aria-live="polite">
+      <h3>Tu pedido</h3>
+      <ul id="oLines"></ul>
+      <div class="otot"><span>Total</span><b id="oTotal">Q50</b></div>
+      <a class="btn solid oenviar" id="oEnviar" href="#">💬 Enviar mi pedido</a>
+      <p class="fine">Entrega en 2 a 3 días. El total es un estimado: te lo confirmamos al revisar tu pedido.</p>
+    </aside>
+  </form>
 </div></section>
 
 <section class="blk"><div class="wrap">
@@ -363,7 +429,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
 <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vName">
   <button class="x" id="vClose" type="button" aria-label="Cerrar">×</button>
   <div class="mbar"><button type="button" id="mClose">✕ Cerrar</button><b id="mName"></b><button type="button" id="mNext">Siguiente →</button></div>
-  <div class="mcol"><div class="colors"><div class="clbl">Prueba otro color</div><div class="cdots" data-cdots></div><p class="cnote">Y cualquier otro: envíanos el <b>nombre</b> o el <b>código</b> del color (ej. #7B2D8E).</p></div><a class="mpedir" id="mPedir" href="#" target="_blank" rel="noopener">💬 Quiero esta invitación</a></div>
+  <div class="mcol"><div class="colors"><div class="clbl">Prueba otro color</div><div class="cdots" data-cdots></div><p class="cnote">Y cualquier otro: envíanos el <b>nombre</b> o el <b>código</b> del color (ej. #7B2D8E).</p></div><a class="mpedir" id="mPedir" href="#pedido">💌 Quiero esta invitación</a></div>
   <div class="vphone"><div class="phone"><div class="scr"><iframe id="vFrame" title="Vista de la invitación"></iframe></div></div></div>
   <div class="info">
     <div class="tp" id="vTipo"></div>
@@ -372,7 +438,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
     <div class="colors"><div class="clbl">Prueba otro color</div><div class="cdots" data-cdots></div><p class="cnote">Y cualquier otro: envíanos el <b>nombre</b> o el <b>código</b> del color (ej. #7B2D8E).</p></div>
     <ul id="vList"></ul>
     <p class="hint">Así la recibirán tus invitados: toca el botón para abrirla y desliza hacia abajo para ver todo. Los nombres, fotos y datos son de ejemplo; en la tuya van los tuyos.</p>
-    <a class="btn solid pedir" id="vPedir" href="#" target="_blank" rel="noopener">💬 Quiero esta invitación</a>
+    <a class="btn solid pedir" id="vPedir" href="#pedido">💌 Quiero esta invitación</a>
     <div class="nav"><button type="button" id="vPrev">← Anterior</button><button type="button" id="vAgain">↺ Volver a abrir</button><button type="button" id="vNext">Siguiente →</button></div>
   </div>
 </div>
@@ -808,7 +874,7 @@ function pedido(){const m=lista()[cur]; if(!m) return CONFIG.mensajeGeneral;
   return CONFIG.mensajeModelo.replace('{modelo}',m.nombre).replace('{tipo}',m.tipo).replace('{color}',col);}
 function dots(){document.querySelectorAll('[data-cdots]').forEach(d=>{d.innerHTML=SW.map(([n,c],i)=>`<button type="button" class="${c?'':'orig'}" data-ci="${i}" aria-pressed="${i===colSel}" title="${n}" aria-label="Color ${n}"${c?` style="background:${c}"`:''}></button>`).join('');});}
 function applyColor(i){
-  colSel=i; dots(); if($('vPedir')) $('vPedir').href=wa(pedido()); if($('mPedir')) $('mPedir').href=wa(pedido());
+  colSel=i; dots();
   try{
     const de=$('vFrame').contentDocument.documentElement;
     if(origStyle===null) origStyle=de.getAttribute('style')||'';
@@ -828,7 +894,6 @@ function open(id){
   $('vList').innerHTML=[...m.chips,...(D.extra[m.tipo]||[]).slice(0,2)].map(x=>`<li>${esc(x)}</li>`).join('');
   colSel=0; origStyle=null; dots();
   const fr=$('vFrame'); fr.srcdoc=''; const pid=m.id; demo(pid,false).then(h=>{if(lista()[cur]&&lista()[cur].id===pid) fr.srcdoc=h;});
-  $('vPedir').href=wa(pedido()); $('mPedir').href=wa(pedido());
   if($('viewer').hidden){lastFocus=document.activeElement; $('viewer').hidden=false; document.body.style.overflow='hidden'; (matchMedia('(max-width:820px)').matches?$('mClose'):$('vClose')).focus();}
 }
 function close(){$('viewer').hidden=true;$('vFrame').srcdoc='';document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
@@ -840,6 +905,43 @@ $('vAgain').addEventListener('click',()=>{const L=lista();open(L[cur].id);});
 $('viewer').addEventListener('click',e=>{if(e.target===$('viewer'))close();});
 $('vPrev').addEventListener('click',()=>{const L=lista();open(L[(cur-1+L.length)%L.length].id);});
 $('vNext').addEventListener('click',()=>{const L=lista();open(L[(cur+1)%L.length].id);});
+// Arma tu pedido
+const EXTRAS=[['lugar2','Segundo lugar (iglesia y fiesta, civil y religiosa)'],['prog','Itinerario o programa'],['momentos','Momentos especiales de XV','Quinceaños'],['historia','Nuestra historia','Boda'],['mesa','Mesa de regalos con links','Boda'],['contactos','Confirmación con varios contactos'],['libre','Sección libre (hashtag, hospedaje, avisos…)']];
+const ADDS=[['pdf','Versión PDF para guardar o imprimir',20],['hoy','Entrega el mismo día',25]];
+const BASE=50, EXTRA=10, MEDIDA='medida';
+let fotos=0;
+$('oTipo').innerHTML=D.orden.map(t=>`<option>${esc(t)}</option>`).join('');
+function modelos(sel){const t=$('oTipo').value;$('oModelo').innerHTML=D.models.filter(m=>m.tipo===t).map(m=>`<option value="${m.id}">${esc(m.nombre)}</option>`).join('')+`<option value="${MEDIDA}">✨ Diseño a tu medida (se cotiza)</option>`;if(sel)$('oModelo').value=sel;}
+function extras(){const t=$('oTipo').value, prev=new Set([...document.querySelectorAll('#oExtras input:checked')].map(i=>i.value));
+  $('oExtras').innerHTML=EXTRAS.filter(e=>!e[2]||e[2]===t).map(([k,n])=>`<label><input type="checkbox" value="${k}"${prev.has(k)?' checked':''}><span>${esc(n)}</span></label>`).join('');}
+$('oAdds').innerHTML=ADDS.map(([k,n,p])=>`<label><input type="checkbox" value="${k}"><span>${esc(n)}</span><i>Q${p}</i></label>`).join('');
+function calc(){
+  const m=D.models.find(x=>x.id===$('oModelo').value), medida=$('oModelo').value===MEDIDA;
+  const ex=[...document.querySelectorAll('#oExtras input:checked')].map(i=>EXTRAS.find(e=>e[0]===i.value)[1]);
+  const ad=[...document.querySelectorAll('#oAdds input:checked')].map(i=>ADDS.find(a=>a[0]===i.value));
+  const L=[[medida?'Diseño a tu medida':'Invitación · '+(m?m.nombre:''),medida?'Se cotiza':'Q'+BASE]];
+  ex.forEach(n=>L.push([n,'Q'+EXTRA])); if(fotos) L.push([(fotos*3)+' fotos extra','Q'+fotos*EXTRA]);
+  ad.forEach(a=>L.push([a[1],'Q'+a[2]]));
+  const tot=(medida?0:BASE)+ex.length*EXTRA+fotos*EXTRA+ad.reduce((s,a)=>s+a[2],0);
+  $('oLines').innerHTML=L.map(([a,b])=>`<li><span>${esc(a)}</span><b>${b}</b></li>`).join('');
+  $('oTotal').textContent=medida?(tot?'Q'+tot+' + diseño':'Se cotiza'):'Q'+tot;
+  const f=$('oFecha').value?$('oFecha').value.split('-').reverse().join('/'):'';
+  const msg=['¡Hola Detallísimos! Quiero hacer un pedido:','• Evento: '+$('oTipo').value,'• Diseño: '+(medida?'Diseño a mi medida':(m?m.nombre:'')),
+    $('oColor').value.trim()&&'• Color: '+$('oColor').value.trim(), f&&'• Fecha del evento: '+f,
+    ex.length&&'• Extras: '+ex.join(', '), fotos&&'• Fotos extra: '+fotos*3, ad.length&&'• Adicionales: '+ad.map(a=>a[1]).join(', '),
+    '• Total estimado: '+$('oTotal').textContent, $('oNombre').value.trim()&&'Mi nombre es '+$('oNombre').value.trim()+'.'].filter(Boolean).join('\n');
+  const e=$('oEnviar'); e.href=wa(msg,'Pedido de invitación · Detallísimos'); if(waOK){e.target='_blank';e.rel='noopener';}
+  e.textContent=waOK?'💬 Enviar mi pedido por WhatsApp':'✉️ Enviar mi pedido por correo';
+}
+$('oTipo').addEventListener('change',()=>{modelos();extras();calc();});
+$('orderForm').addEventListener('input',calc);$('orderForm').addEventListener('change',calc);
+document.querySelector('.qty').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;fotos=Math.max(0,Math.min(10,fotos+ +b.dataset.q));$('oFotos').textContent=fotos;calc();});
+modelos();extras();calc();
+// Desde el visor: llevar el diseño y el color al pedido
+function aPedido(e){e.preventDefault();const m=lista()[cur];if(!m)return;close();
+  $('oTipo').value=m.tipo;modelos(m.id);extras();if(colSel>0)$('oColor').value=SW[colSel][0];calc();
+  $('pedido').scrollIntoView({behavior:'smooth'});}
+$('vPedir').addEventListener('click',aPedido);$('mPedir').addEventListener('click',aPedido);
 document.addEventListener('keydown',e=>{if($('viewer').hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')$('vNext').click();if(e.key==='ArrowLeft')$('vPrev').click();});
 })();
 </script>
