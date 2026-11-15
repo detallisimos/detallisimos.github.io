@@ -309,7 +309,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
     <div class="feat"><div class="ic">🎨</div><h3>Colores</h3><p><b>Lo hacemos en el color que quieras.</b> Envíanos el nombre del color o su código (por ejemplo <b>#7B2D8E</b>) o una foto del vestido o la decoración, y la hacemos en ese tono, con detalles dorados, plateados u oro rosa. Estos son solo algunos ejemplos:</p><div class="swatches" id="sw"></div></div>
     <div class="feat"><div class="ic">✍️</div><h3>Tipo de letra</h3><p>Escogemos contigo entre 6 estilos de letra: elegante, romántica, caligrafía, moderna, clásica e infantil.</p><div class="fonts"><span style="font-family:'Pinyon Script',cursive">Elegante</span><span style="font-family:'Great Vibes',cursive">Romántica</span><span style="font-family:'Parisienne',cursive">Caligrafía</span><span style="font-family:'Sacramento',cursive">Moderna</span><span style="font-family:'Imperial Script',cursive">Clásica</span><span style="font-family:'Dancing Script',cursive">Infantil</span></div></div>
     <div class="feat"><div class="ic">📸</div><h3>Fotos</h3><p>Colocamos tu foto principal en marco o completa, 3 fotos de recuerdo y una galería extra deslizable.</p></div>
-    <div class="feat"><div class="ic">🎵</div><h3>Música</h3><p>Ponemos tu canción para que suene al abrir la invitación, con botón para pausar.</p></div>
+    <div class="feat"><div class="ic">🎵</div><h3>Música</h3><p>Escoge una canción de nuestra lista o mándanos la tuya; suena al abrir la invitación, con botón para pausar.</p></div>
     <div class="feat"><div class="ic">✨</div><h3>Animación de fondo</h3><p>Le agregamos mariposas, pétalos, destellos, luciérnagas o corazones, o la dejamos sin animación.</p></div>
     <div class="feat"><div class="ic">📍</div><h3>Lugares</h3><p>Agregamos la ceremonia y la recepción con botones directos a Waze y Google Maps.</p></div>
     <div class="feat"><div class="ic">⏳</div><h3>Cuenta regresiva</h3><p>Configuramos la cuenta de días, horas, minutos y segundos que faltan para el gran día.</p></div>
@@ -339,7 +339,7 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
         <li>Tus datos: nombres, papás, fecha, hora y texto</li>
         <li>1 lugar con Waze y Google Maps</li>
         <li>Foto principal + 3 fotos</li>
-        <li>Tu canción al abrir</li>
+        <li>Música al abrir: escoge de nuestra lista de canciones</li>
         <li>Cuenta regresiva</li>
         <li>Mensaje especial, vestimenta y regalos</li>
         <li>Confirmación por WhatsApp</li>
@@ -370,6 +370,8 @@ header.top .btn.hdr{margin-left:18px;padding:8px 16px;font-size:.88rem}
         <ul class="adds">
           <li><span>📄 Versión PDF para guardar o imprimir</span><b>Q20</b></li>
           <li><span>⚡ Entrega el mismo día</span><b>Q25</b></li>
+          <li><span>🔗 Tu propia canción (link de YouTube)</span><b>Q10</b></li>
+          <li><span>📁 Tu propia canción en MP3</span><b>Q5</b></li>
           <li class="med"><span>✨ <a href="#a-medida">Diseño a tu medida</a></span><b>Se cotiza</b></li>
         </ul>
       </div>
@@ -907,7 +909,7 @@ $('vPrev').addEventListener('click',()=>{const L=lista();open(L[(cur-1+L.length)
 $('vNext').addEventListener('click',()=>{const L=lista();open(L[(cur+1)%L.length].id);});
 // Arma tu pedido
 const EXTRAS=[['lugar2','Segundo lugar (iglesia y fiesta, civil y religiosa)'],['prog','Itinerario o programa'],['momentos','Momentos especiales de XV','Quinceaños'],['historia','Nuestra historia','Boda'],['mesa','Mesa de regalos con links','Boda'],['contactos','Confirmación con varios contactos'],['libre','Sección libre (hashtag, hospedaje, avisos…)']];
-const ADDS=[['pdf','Versión PDF para guardar o imprimir',20],['hoy','Entrega el mismo día',25]];
+const ADDS=[['pdf','Versión PDF para guardar o imprimir',20],['hoy','Entrega el mismo día',25],['yt','Tu propia canción (link de YouTube)',10],['mp3','Tu propia canción en MP3',5]];
 const BASE=50, EXTRA=10, MEDIDA='medida';
 let fotos=0;
 $('oTipo').innerHTML=D.orden.map(t=>`<option>${esc(t)}</option>`).join('');
